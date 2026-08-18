@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        College Portal
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+<header>
+    <h1>University Portal</h1>
+    <p>Central access for students, departments, and college administration</p>
+</header>
+
+
+<nav>
+    <a href="#">Home</a> |
+    <a href="#">About</a> |
+    <a href="#">Academics</a> |
+    <a href="#">Campus Life</a> |
+    <a href="#">Contact</a>
+</nav>
+
+<hr>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+<hr>
+
+<footer>
+    <p>&copy; 2026 University Portal. All rights reserved.</p>
+    <p>123 Campus Drive, College Town, CT 56789</p>
+    <p>Contact: info@university.edu | (555) 123-4567</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+
+
+{% block title %}
+Home - College Portal
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+
+<h2>Welcome to the College Portal</h2>
+
+<p>
+Please select your login type to access your personalized dashboard.
+</p>
+
+
+<p>
+    <a href="/login/student/">
+    <button>Student Log In</button>
+    </a>
+
+    <a href="/login/department_admin/">
+    <button>Dept Log In</button>
+    </a>
+
+    <a href="/login/college_admin/">
+    <button>College Login</button>
+    </a>
+</p>
+
+
+<h3>Quick Information</h3>
+
+<ul>
+    <li>Student portal: access grades, schedule, and resources.</li>
+    <li>Department login: manage courses, faculty, and student records.</li>
+    <li>College administration: oversee admissions, finance, and policies.</li>
+</ul>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Student</title>
+</head>
+
+<body>
+
+    <h2>Update Student</h2>
+
+    <p>
+        Updating:
+        <strong>{{ student.student_name }}</strong>
+    </p>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Update Student
+        </button>
+
+        <a href="{% url 'student_list' %}">
+            Cancel
+        </a>
+
+    </form>
+
+</body>
+</html>

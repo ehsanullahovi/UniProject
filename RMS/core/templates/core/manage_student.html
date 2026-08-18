@@ -1,0 +1,62 @@
+
+{% extends "core/base.html" %}
+
+
+{% block title %}
+Home - College Portal
+{% endblock %}
+
+
+{% block content %}
+
+
+<h2>Student List</h2>
+
+<a href="{% url 'add_student' %}">Add Student</a>
+
+<table border="1">
+
+<tr>
+    <th>Name</th>
+    <th>Roll</th>
+    <th>Department</th>
+    <th>Session</th>
+    <th>Action</th>
+</tr>
+
+{% for student in students %}
+
+<tr>
+    <td>{{ student.student_name }}</td>
+    <td>{{ student.student_roll }}</td>
+    <td>{{ student.department }}</td>
+    <td>{{ student.session }}</td>
+
+    <td>
+
+        <a href="{% url 'update_student' student.id %}" class="edit-btn">
+        Edit
+        </a>
+
+        <form method="POST"
+              action="{% url 'delete_student' student.id %}"
+              style="display: inline;"
+              onsubmit="return confirm('Are you sure you want to delete {{ student.student_name }}?');">
+
+            {% csrf_token %}
+
+            <button type="submit">
+                Delete
+            </button>
+
+        </form>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
